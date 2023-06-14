@@ -9,3 +9,9 @@ Production of sequence diagrams for the system operations described in the contr
 
 # Laboratory 4:
 Development of state machine diagrams for managing subscriptions, group activities, personalized activities, and client categories. Implementation of skeleton code for some significant classes in the domain layer using Java, limiting the methods to their signatures and any necessary method calls.
+
+# Group members:
+
+- [Roberto Prina](https://github.com/RobertoEdoardoPrina)
+- [AleDubini](https://github.com/Alexd1303)
+- [e.martin4](https://github.com/eliamartin)
