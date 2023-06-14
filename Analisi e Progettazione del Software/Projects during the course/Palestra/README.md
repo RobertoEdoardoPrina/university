@@ -12,6 +12,10 @@ Development of state machine diagrams for managing subscriptions, group activiti
 
 # Group members:
 
-- [Roberto Prina](https://github.com/RobertoEdoardoPrina)
+- [Roberto Edoardo Prina](https://github.com/RobertoEdoardoPrina)
 - [AleDubini](https://github.com/Alexd1303)
 - [e.martin4](https://github.com/eliamartin)
+- [TommasoRezzani](https://github.com/TommasoRezzani)
+
+
+
