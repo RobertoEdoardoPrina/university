@@ -1,0 +1,41 @@
+-- Inserisci Contatto --
+
+Nome del Caso d’Uso :  Inserisci Contatto.
+Portata : Rubrica.
+Livello : Obiettivo utente.
+Attore Primario : Utente.
+Parti Interessate e Interessi : Utente.
+Pre-condizioni : Il contatto non deve esistere.
+Garanzia di successo : Sarà possibile visionare il contatto una volta inserito.
+Scenario Principale di Successo :
+	1. L'utente inserisce il contatto composto da nome, descrizione, uno più numeri e possibile protezione
+	2. Il contatto viene salvato
+	3. L'utente può rivisionare il contatto.
+Estensioni : Il contatto è già inserito (fallimento).
+Requisiti speciali : 
+	1. Il contatto non deve essere già inserito.
+	2. Il numero deve essere composto da soli numeri e di lunghezza 10, senza contare il prefisso.
+Elenco delle variabili tecnologiche e dei dati : Deve essere possibile inserire caratteri e numeri.
+Varie : Il numero inserito potrebbe essere corretto ma non funzionante.
+
+
+-- Rimuovi Contatto --
+
+Nome del Caso d’Uso : Rimuovi Contatto.
+Portata : Rubrica.
+Livello : Obiettivo utente.
+Attore Primario : Utente.
+Parti Interessate e Interessi : Utente.
+Pre-condizioni : Deve esistere il contatto in rubrica.
+Garanzia di successo : L'utente non deve più poter trovare il contatto una volta rimosso.
+Scenario Principale di Successo : 
+	1. L'utente inserisce il contatto da rimuovere.
+	2. Il contatto viene rimosso
+	3. Il contatto non è più visionabile.
+Estensioni : Il contatto non esiste (fallimento).
+Requisiti speciali : 
+	1. Il contatto deve esistere.
+	2. Il contatto non deve avere protezione.
+Elenco delle variabili tecnologiche e dei dati : Deve essere possibile inserire caratteri.
+Frequenza di ripetizione : Indefinita.
+Varie : Nessuna.

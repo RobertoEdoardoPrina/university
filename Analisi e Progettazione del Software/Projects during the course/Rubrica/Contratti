@@ -1,0 +1,54 @@
+Contratto inserisciNuovoContatto
+Operazione: inserisciNuovoContatto()
+Riferimenti caso d’uso: InserisciContatto
+Precondizioni: -
+Postcondizioni:
+- È stata creata un’istanza c di Contatto (creazione di oggetto)
+- Gli attributi di c sono stati inizializzati (modifica di attributi)
+- L’istanza c di Contatto è stata associata alla Rubrica r (formazione di collegamento)
+
+Contratto inserisciDatiContatto
+Operazione: inserisciDatiContatto(nome: string, descrizione: string)
+Riferimenti caso d’uso: InserisciContatto
+Precondizioni: è in corso l’aggiunta in Rubrica r di un Contatto c
+Postcondizioni:
+- c.nome è diventato nome (modifica di attributo)
+- c.descrizione è diventato descrizione (modifica di attributo)
+
+Contratto inserisciNumeroContatto
+Operazione: inserisciNumeroContatto(numero: string, tipo: string)
+Riferimenti caso d’uso: InserisciContatto
+Precondizioni: è in corso l’aggiunta in Rubrica r di un Contatto c
+Postcondizioni:
+- È stata creata un’istanza n di NumeroTelefono (creazione di oggetto)
+- n.numero è diventato numero (modifica di attributo)
+- n.tipo è diventato tipo (modifica di attributo)
+- l’istanza n di NumeroTelefono è stata associata al Contatto c (formazione di collegamento)
+
+Contratto confermaInserimento
+Operazione: confermaInserimento()
+Riferimenti caso d’uso: InserisciContatto
+Precondizioni: è in corso l’aggiunta in Rubrica r di un Contatto c
+Postcondizioni:
+- l’istanza c di Contatto è stata associata alla Rubrica r (formazione di collegamento)
+
+Contratto erroreNomeDuplicato
+Operazione: erroreNomeDuplicato()
+Riferimenti caso d’uso: InserisciContatto
+Precondizioni: il nome dell'utente inserito deve già essere presente in rubrica
+Postcondizioni:
+- l'utente viene informato dell'errore
+
+Contratto numeroErratoDuplicato
+Operazione: numeroErratoDuplicato()
+Riferimenti caso d’uso: InserisciContatto
+Precondizioni: l'utente scelto deve avere già associato il numero inserito
+Postcondizioni:
+- l'utente viene informato dell'errore
+
+Contratto erroreRubricaPiena
+Operazione: erroreRubricaPiena()
+Riferimenti caso d’uso: InserisciContatto
+Precondizioni: la rubrica ha raggiunto i 100 contatti
+Postcondizioni:
+- l'utente non è più in grado di inserire nuovi contatti
