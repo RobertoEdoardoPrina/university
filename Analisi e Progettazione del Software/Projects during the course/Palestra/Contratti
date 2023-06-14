@@ -1,0 +1,76 @@
+-- Contratti inserisciNuovoCliente - Roberto Edoardo Prina 852237 --
+
+Contratto inserisciNuovoCliente
+Operazione: inserisciNuovoCliente()
+Riferimenti caso d’uso: iscriviti
+Precondizioni: -
+Postcondizioni:
+- Viene effettuata la richiesta di inserimento nuovo cliente
+- Viene avviata la creazione di un cliente c
+
+Contratto inserisciDatiAngrafici
+Operazione: inserisciDatiAnagrafici(nome, cognome, dataDiNascita, genere)
+Riferimenti caso d’uso: iscrivi
+Precondizioni: E' in corso la richiesta di inserimento di un nuovo cliente
+Postcondizioni:
+- il sistema riceve i dati relativi al nuovo cliente
+- i dati vengono temporaneamente salvati
+
+
+--Contratti ConsultaCliente – Tommaso Rezzani 874903 --
+
+Contratto getListaServizi
+Operazione: getListaServizi()
+Riferimenti caso d’uso: ConsultaServizi
+Precondizioni: 
+- È stata fatta richiesta della lista dei vari servizi della palestra
+Postcondizioni:
+- È stata creata una lista contenente tutti i servizi della palestra (creazione di oggetto)
+
+Contratto consultaDettagliServizio
+Operazione: consultaDettagliServizio (nome)
+Riferimenti caso d’uso: ConsultaServizi
+Precondizioni: 
+- È stata fatta richiesta dei dettagli di un determinato corso da parte della Persona
+Postcondizioni:
+- È stata creata una lista contenente tutte le lezioni possibili del corso richiesto (creazione di oggetto)
+- Per ogni lezione vengono forniti i rispettivi attributi (modifica di attributi)
+
+
+--Contratti AcquistaPacchettoIngressi – Alessandro Dubini 885957
+
+Contratto richiediOpzioniPacchetto
+Operazione: richiediOpzioniPacchetto()
+Riferimenti caso d’uso: AcquistaPacchettoIngressi
+Precondizioni: è stata richiesta la lista l di PacchettoIngressi acquistabili
+Postcondizioni: è stata restituita la lista l contenente tutte le tipologie di pacchetti acquistabili (creazione oggetto)
+
+Contratto acquistaPacchetto
+Operazione: acquistaPacchetto(numeroIngressi)
+Riferimenti caso d’uso: AcquistaPacchettoIngressi
+Precondizioni: 
+-	La lista di pacchetti l non deve essere vuota
+-	Deve essere in corso l’acquisto di un PacchettoIngressi pI da parte di una Persona p
+-	pI.numeroIngressi uguale a numeroIngressi
+Postcondizioni: 
+-	p.DataAcquisto è diventata la data odierna
+-	pI è stato associato con p
+
+
+---Elia Leonardo Martin 886366-- 
+
+Contratto prenotaCorso
+Operazione: prenotaCorso(idPersona, indiceServizioStandard)
+Riferimenti caso d'uso: prenotaCorso
+Precondizioni: 
+- il servizioStandard s, che si trova all'indice indiceServizioStandard, è stato selezionato dalla lista dei servizi.
+Postcondizioni: 
+- è stata aggiunta l'istanza di persona p alla lista s.listaPartecipanti.
+
+Contratto verificaDisponibilità
+Operazione: verificaDisponibilità(indiceServizioStandard)
+Riferimenti caso d'uso: prenotaCorso
+Precondizioni: 
+- deve essere stata effettuata una prenotazione p ad un servizioStandard s
+Postcondizioni:
+- il controllo dell'operazione s.listaPartecipanti.length < numeroMassimoPartecipanti ha dato esito positivo.

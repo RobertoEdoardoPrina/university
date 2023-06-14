@@ -1,0 +1,104 @@
+-- Iscriviti alla palestra - Roberto Edoardo Prina 852237 --
+
+Nome del Caso d’Uso : Iscriviti.
+Portata : Palestra.
+Livello : Obiettivo utente.
+Attore Primario : Persona.
+Parti Interessate e Interessi : Persona - vuole iscriversi alla palestra.
+Pre-condizioni : La persona non deve essere già iscritta.
+Post-condizioni: La persona deve diventare cliente con abbonamento e tessera associata.
+Scenario Principale di Successo : 
+	1. La persona può consultare i vari piani di abbonamento della palestra.
+	2. La persona sceglie il piano che desidera.
+	3. La persona acquista l'abbonamento (Include Pagamento).
+	4. La persona diventa cliente della palestra.
+Estensioni : 
+	3a. La persona è già un cliente
+		3a1. Il sistema notifica l'impossibilità di potersi iscrivere di nuovo.
+Requisiti speciali : -
+Elenco delle variabili tecnologiche e dei dati : -
+Frequenza di ripetizione : Potrebbe essere quasi ininterrotta.
+Varie : -
+
+
+-- Consulta Servizi della Palestra – Tommaso Rezzani 874903 --
+
+Nome del Caso d’Uso: ConsultaServizi.
+Portata: Palestra.
+Livello: Obiettivo utente.
+Attore Primario: Persona.
+Parti Interessate e Interessi: Persona - vuole consultare i servizi della palestra.
+Pre-condizioni: La palestra deve avere dei servizi.
+Post-condizioni: La persona ha consultato i servizi della palestra.
+Scenario Principale di Successo:
+	1. La persona vuole consultare i servizi della palestra.
+	2. Il sistema mostra l'elenco dei servizi offerti.
+	3. La persona visualizza i servizi che le interessano.
+	4. Vengono forniti i dettagli dei vari servizi.
+Estensioni:
+	2a. Nessun servizio
+		2a1. Il sistema notifica la persona che al momento nessun servizio è disponibile.
+		2a2. La persona annulla l'operazione.
+Requisiti speciali: -
+Elenco delle variabili tecnologiche e dei dati: -
+Frequenza di ripetizione: Potrebbe essere quasi ininterrotta.
+Varie: -
+
+
+-- Acquista pacchetto ingressi - Alessandro Dubini 885957 --
+
+Nome del Caso d’Uso: AcquistaPacchettoIngressi.
+Portata: Palestra.
+Livello: Obiettivo utente.
+Attore Primario: Persona.
+Parti interessate e interessi: Persona - vuole acquistare un pacchetto ingressi.
+Pre-condizioni: Deve essere presente almeno un pacchetto nel sistema.
+Post-condizioni: È stato assegnato un pacchetto ingressi alla persona.
+Scenario principale di successo:
+	1. La persona vuole acquistare un pacchetto ingressi.
+	2. Il sistema mostra l’elenco dei pacchetti e delle offerte disponibili.
+	3. La persona seleziona il pacchetto che desidera acquistare.
+	4. Il sistema mostra il prezzo del pacchetto selezionato.
+	5. Include Pagamento.
+	6. La persona riceve un pacchetto ingressi.
+Estensioni: 
+	3a. La persona è già in possesso di un pacchetto ingressi (fallimento).
+		3a1. Il sistema notifica che la persona è già in possesso di un pacchetto ingressi.
+		3a2. Il sistema mostra alla persona la data di scadenza del pacchetto ingressi  attualmente attivo.
+		3a3. La persona annulla l’operazione.
+Requisiti speciali: -
+Elenco delle variabili tecnologiche e dei dati: La persona può acquistare un pacchetto direttamente in palestra.
+Frequenza di ripetizione: Potrebbe essere quasi ininterrotta.
+Varie: -
+
+
+-- Prenota un Corso – Elia Leonardo Martin 886366 --
+
+Nome del Caso d’Uso: PrenotaCorso.
+Portata: Palestra.
+Livello: Obiettivo utente.
+Attore Primario: Persona.
+Parti interessate e interessi: Persona - vuole poter prenotare un corso.
+Pre-condizioni: La persona deve essere in possesso di biglietti ingresso.
+Post-condizioni: La persona prenota l’ingresso a un corso.
+Scenario principale di successo:
+	1. La persona vuole prenotare un corso.
+	2. Il sistema mostra l’elenco dei corsi disponibili.
+	3. La persona seleziona il corso che vuole prenotare.
+	4. Il sistema mostra gli orari e i giorni disponibili del corso scelto.
+	5. La persona seleziona la data in cui vuole frequentare il corso.
+	6. Il sistema effettua la prenotazione e notifica che è avvenuta correttamente.
+Estensioni: 
+	6a. Ingressi esauriti.
+		6a1. Il sistema notifica che la persona ha esaurito il numero di ingressi disponibili.
+		6a.2. La persona annulla l’operazione.
+	6b. Posti insufficienti.
+		6b1. Il sistema notifica che il numero di posti disponibili per frequentare il corso in quella data sono esauriti.
+		6b2. La persona annulla l’operazione.
+	6c. Prenotazione già effettuata.
+		6c1. Il sistema notifica la persona che ha tentato di prenotare nuovamente il corso nella stessa data in cui ha già effettuato una prenotazione.
+		6c2. La persona annulla l’operazione.
+Requisiti speciali: -
+Elenco delle variabili tecnologiche e dei dati: -
+Frequenza di ripetizione: Potrebbe essere quasi ininterrotta.
+Varie: -

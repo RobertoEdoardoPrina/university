@@ -1,0 +1,142 @@
+--------NOTE: 
+- i pdf "consegna lab X.pdf" contengono i task richiesti per ogni laboratorio, le cui commit sono state effettuate nei tempi richiesti e quindi non modificate.
+- il pdf "progetto completo.pdf" contiene l'insieme dei task richiesti per ogni laboratiorio AGGIORNATI, i quali sono stati soggetti ad eventuali modifiche.
+
+--------CONSEGNE: 
+consegne singole per laboratorio divise per studente.
+LABORATORIO 5: 
+- casi d'uso formato dettagliato
+	Roberto Edoardo Prina 852237 -  Iscriviti alla palestra
+	Tommaso Rezzani 874903 - Consulta servizi della palestra
+	Alessandro Dubini 885957 - Acquista pacchetti ingressi
+	Elia Leonardo Martin 886366 - Preonta un corso
+
+LABORATORIO 6: 
+- contratti
+	Roberto Edoardo Prina 852237 - inserisciNuovoCliente, inserisciDatiAnagrafici
+	Tommaso Rezzani 874903 - getListaServizi, consultaDettagliServizio
+	Alessandro Dubini 885957 - richiediOpzioniPacchetto, acquistaPacchetto
+	Elia Leonardo Martin 886366 - prenotaCorso, verificaDisponibilità
+	
+- diagrammi di attività
+	Roberto Edoardo Prina 852237 - Attività Iscriviti
+	Tommaso Rezzani 874903 - Attività CancellaPrenotazioneCorso
+	Alessandro Dubini 885957 - Attività AcquistaAbbonamento
+	Elia Leonardo Martin 886366 - Attività PrenotaCorso
+	
+LABORATORIO 7:
+- diagrammi di sequenza
+	Roberto Edoardo Prina 852237 - inserisciNuovoCliente, inserisciDatiAnagrafici
+	Tommaso Rezzani 874903 - getListaServizi, consultaDettagliServizio
+	Alessandro Dubini 885957 - richiediOpzioniPacchetto, acquistaPacchetto
+	Elia Leonardo Martin 886366 - prenotaCorso, verificaDisponibilità
+
+LABORATORIO 8:
+- diagrammi macchine a stati
+	Roberto Edoardo Prina 852237 - SM GstioneAbbonamento
+	Tommaso Rezzani 874903 - SM GestioneAttivitiaDiGruppo
+	Alessandro Dubini 885957 - SM GestioneAttivitaPersonalizzata
+	Elia Leonardo Martin 886366 - SM GestioneCategorieCliente
+- divisione codice Java in package
+	Roberto Edoardo Prina 852237 - Palestra
+	Tommaso Rezzani 874903 - Offerta
+	Alessandro Dubini 885957 - Utente
+	Elia Leonardo Martin 886366 - Servizio
+	
+	
+--------MODIFICHE: 
+LABORATORIO 6
+- modifica "numeroPartecipanti" diventa "listaPartecipanti" in ServizioStandard
+- aggiunta attributo "idPersona" in Persona
+
+LABORATORIO 7
+- modifica metodo "paga" in sistema: aggiunta attributi
+- inversione delle cardinalià del Modello di Dominio
+Nel modello di dominio: 
+- cardinalità di pacchetto - persona cambiata a 1-1
+- cardinalità di persona - abbonamento cambiata a 1-1
+- trasferimento di dataScadenza da persona a abbonamento
+- tipo di codiceTessera cambiata da integer a String
+- modificato SD acquistapacchetto
+
+LABORATORIO 8
+- aggiunta del metodo getOrarioPalestra() a Palestra_SW
+- aggiunta del metodo getOrario(tipologia) a Palestra_SW
+- aggiunta enum Orario [giornaliero, settimanale, mensile]
+- aggiunta del metodo cancellaPrenotazione(idPersona, idCorso)
+- aggiunta del metodo getOrarioTrainer(idPersona)
+- aggiunta estensione nel formato dettagliato del caso d'uso Prenota Un Corso:
+	Estensione 6d. Prenotazione in ritardo
+			6d.1 il sistema notifica che la persona ha tentato di effettuare
+			una prenotazione 30 minuti prima dell'inizio del corso.
+			6d.2 la persona annulla l'operazione.
+- l'operazione inserisciNuovoCliente è stata cambiata in:
+	inserisciNuovoUtente(dati anagrifici)
+- tolgo inserisciNuovaPersona
+- aggiungo acquistaAbbonamento()
+	acquistabbonamento crea l'istanza abbonamento
+	rinnova abbonamento cambia i parametri tiplogia-datascadenza
+- modificato ssd iscriviti con l'aggiunta di acquista abbonamento
+- modificato ssd acquistaPacchettiIngressi 
+- sono stati tolti i parametri al metodo paga()
+- modificato ssdPrenotaCorso: salvaPrenotazione diventa aggiungiPartecipante
+- modificato sd InserisciNuovoCliente inacquistaAbbonamento
+- modificato contratto inserisciNuovoCliente in acquistaAbbonamento
+- aggiunto cancellaServizio(indiceServizio) a palestra_SW
+- aggiunto cancellaOfferta(indiceOfferta) a palestra_SW
+- aggiunto isValido() ad abbonamento_SW
+- aggiunto richiediServizioPersonalizzato() e richiediTrainer()
+- getSovrapprezzo() -> calcolaSovrapprezzo(tipologiaAbbonamento) in PersonalTrainer_SW
+- dataDiNascita() in Persona_SW di tipo String diventa di tipo Date
+- dataAcquisto() in Persona_SW viene cambiato in dataUltimoAcquisto()
+- aggiunto l'attributo supervisore di tipo PersonalTrainer a servizioPersonalizzato_SW
+- aggiunto il metodo decrementaIngressi in PacchettoIngressi_SW
+- aggiunto il parametro idCliente a richiediServizioPersonalizzato() in Palestra_SW
+- aggiunto i parametro idCliente e idTrainer a richiediTrainer() in Palestra_SW
+- aggiunto l'attributo numeroMassimoPartecipanti e trainer in Palestra_SW
+- aggiunto il parametro indiceOfferta in acquistaAbbonamento() in Palestra_SW.
+- aggiunto il metodo rimuoviPartecipante() in ServizioStandard_SW
+
+
+	
+--------APPUNTI:
+Serie di spiegazioni necessarie per comprendere il sistema:
+- il metodo getListaPacchetti() di palestra contiene istanze di Offerta (exception getClass())
+- si chiama su palestra il metodo acquistaPacchetto(numerOfferta, idPersona), che crea il pacchetto e lo associa alla persona
+- numeroOfferta corrisponde all'indice della lista di pacchetti
+- Il metodo paga della classe Pagamento_SW utilizza come parametri i dati della carta della Persona i quali verranno insieriti manualmente da lei al momento del pagamento, i quali non verranno salvati per pagamenti furturi, quindi non istanziati.
+- Pacchetto ingressi non prevede un enum. E' stata utilizzata una lista in modo da poter aggiungere successivamente nuove tipologie di pacchetti ingressi
+- IPersonaSubscriber e i metodi correlati permettono di gestire un sistema di notifiche per gli abbonamenti in scadenza e l'aggiunta di nuovi pacchetti ingresso (gestiti attraverso una lista ampliabile)
+- il trainer è disponibile per tutta la durata dell'abbonameneto. Il suo costo varia in base alla tipologia dell'abbonamento del cliente che ha richiesto la supervisione.
+
+Sono stati inseriti i seguenti metodi e classi non richieste dalla consegna ma utili per descrivere il comportamento del sistema: 
+- sono stati inseriti i metodi getter per le seguenti classi SW: 
+	- Abbonamento_SW
+	- Offerta_SW
+	- PacchettoIngressi_SW
+	- Palestra_SW
+	- Dettagli_SW
+	- Esercizio_SW
+	- Scheda_SW
+	- Servizio_SW
+	- ServizioPersonalizzato_SW
+	- ServizioStandard_SW
+	- PersonalTrainer_SW
+- sono stati inseriti i seguenti metodi: 
+	- puòAccedere(), Area_SW
+	- generaCodice(), GeneratoreTessera
+- sono state create le seguenti classi: 
+	- Pagamento: permette di gestire i pagamenti degli abbonamenti e pacchetti ingresso
+	- GeneratoreTessera: permette di creare il codice da assegnare alla tessera del cliente
+	- IPersonaSubscriber: permette di gestire le notifiche degli utenti
+	
+
+--------NON MOSTRA PARAMETRI:
+i seguenti metodi non mostrano i parametri nonostante il "mostra firma" sia attivo:
+- aggiungiPartecipanti() di ServizioStandard nel diagramma delle classi SW
+- verificaDisponibilitàCorso() di servizioController nel diagramma delle classi SW
+- IPersonaSubscriber nel diagramma delle classi SW
+- cancellaPrenotazione in Palestra_SW
+- tutti i metodi della classe ServizioStandard_SW
+
+
