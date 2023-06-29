@@ -54,3 +54,10 @@ I corsi implicano la presenza di un trainer. Si noti che un trainer può seguire
 Il sistema deve poter offrire l'orario complessivo della palestra per un giorno, una settimana oppure un mese. Inoltre, deve poter fornire l'orario relativo ad ogni trainer della palestra.
 Fisicamente la palestra è divisa in varie aree. In base alla tipologia dei clienti essi hanno accesso nelle aree a loro riservate. Per esempio, la palestra ha 2 piscine. Una delle due piscine è accessibile a tutte le persone, mentre la seconda soltanto ai clienti fedeli.
 Il calcolo del prezzo della palestra varia in base al tipo di abbonamento: mensile, trimestrale, semestrale, annuale. I pacchetti di ingressi hanno dei prezzi di fascia più alta e prevedono cinque o dieci ingressi, usufruibili nell’arco di due mesi.
+
+# Group members:
+
+- [Roberto Edoardo Prina](https://github.com/RobertoEdoardoPrina)
+- [AleDubini](https://github.com/Alexd1303)
+- [e.martin4](https://github.com/eliamartin)
+- [TommasoRezzani](https://github.com/TommasoRezzani)
