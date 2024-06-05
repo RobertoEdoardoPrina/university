@@ -1,1 +1,1 @@
-Per il trascritto ENST00000466434 vi sono 0 reads del file sim.ENST00000296734.Aligned.sortedByCoord.out.bam che lo supportano
+For the transcript ENST00000466434 there are 0 reads of the file sim.ENST00000296734.Aligned.sortedByCoord.out.bam that support it
