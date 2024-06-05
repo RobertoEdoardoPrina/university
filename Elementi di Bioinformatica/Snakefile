@@ -1,0 +1,41 @@
+# Regola per l'analisi dei trascritti
+#rule analyze_transcripts:
+#    input:
+#        gtf='ENST00000466434.gtf',
+#        bam='merged.bam'
+#    output:
+#        'transcript_analysis.txt'
+#    params:
+#        val_tolleranza=10,
+#    shell:
+#        '''
+#        python3 main.py {input.gtf} {input.bam} {params.val_tolleranza} > {output}
+#       '''
+
+# Regola per l'eliminazione dei file temporanei
+#rule clean:
+#    shell:
+#        '''
+#        rm -f transcript_analysis.txt
+#        '''
+
+# Regola per l'analisi dei trascritti
+rule analyze_transcripts:
+    input:
+        gtf = '{gtf}.gtf',
+        bam = '{bam}.bam'
+    output:
+        '{gtf}_{bam}_{tolleranza}_transcript_analysis.txt'
+    params:
+        tolleranza = '{tolleranza}',
+    shell:
+        '''
+        python3 main.py {input.gtf} {input.bam} {params.tolleranza} > {output}
+       '''
+
+# Regola per l'eliminazione dei file temporanei
+rule clean:
+    shell:
+        '''
+        rm -f *_transcript_analysis.txt
+        '''
