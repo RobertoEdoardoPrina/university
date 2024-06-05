@@ -1,1 +1,1 @@
-Per il trascritto ENST00000466434 vi sono 262 reads del file merged.bam che lo supportano
+For the transcript ENST00000466434 there are 262 reads of the file merged.bam that support it
