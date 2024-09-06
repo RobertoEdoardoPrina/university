@@ -4,8 +4,6 @@
 
 **Gym Management System**
 
-Based on the gym management system modeled in previous tasks, please refer to the diagrams provided in the *GitHub link* of your respective group (see section Pre Appello – Creation of Repositories for Groups Turn 1 / 2).
-
 ## New Features
 
 The project introduces the following features:
